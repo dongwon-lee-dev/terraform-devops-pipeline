@@ -329,8 +329,8 @@ resource "aws_ecs_service" "sonarqube" {
 resource "aws_ecs_task_definition" "nexus_with_efs" {
   family                   = "nexus"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "1024"
-  memory                   = "2048"
+  cpu                      = "2048"
+  memory                   = "4096"
   network_mode             = "awsvpc"
   execution_role_arn       = var.ecs_task_execution_role_arn
 
