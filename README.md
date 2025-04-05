@@ -6,7 +6,7 @@
 2. Prepare your own domain and get SSL Certificate of you domain issued by AWS Certificate Manager (ACM).
 3. Prepare an IAM Role for ECS Task Execution.
 4. Create your own **terraform.tfvars** on the root directory.
-```bash
+```
 domain_name = [your domain name]
 ssl_certificate = [ACM SSL Certificate ARN of your domain name]
 
