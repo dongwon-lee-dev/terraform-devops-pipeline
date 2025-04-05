@@ -3,7 +3,7 @@
 ### ⚠️ Essential
 
 1. Prepare an AWS account.
-2. Prepare your own domain and get SSL Certificate of you domain issued by AWS Certificate Manager (ACM).
+2. Prepare your own domain (e.g. example.com), create a public hosting zone of the domain on Route53, and get SSL Certificate of you domain (example.com & *.example.com) issued by AWS Certificate Manager (ACM).
 3. Prepare an IAM Role for ECS Task Execution.
 4. Create your own **terraform.tfvars** on the root directory.
 ```
