@@ -65,7 +65,7 @@ resource "aws_lb_target_group" "jenkins_target_group" {
   name        = "jenkins-target-group"
   port        = 8080
   protocol    = "HTTP"
-  target_type = "ip"
+  target_type = "instance"
   vpc_id      = var.aws_vpc_app_vpc_id
 
   health_check {

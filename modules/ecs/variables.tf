@@ -65,6 +65,13 @@ variable "aws_subnet_private2_id" {
   type = string
 }
 
+variable "aws_subnet_public1_id" {
+  type = string
+}
+
+variable "aws_subnet_public2_id" {
+  type = string
+}
 
 
 variable "jenkins_image" {
@@ -91,3 +98,6 @@ variable "ecs_task_execution_role_arn" {
   type = string
 }
 
+variable iam_instance_profile {
+  type = string
+}

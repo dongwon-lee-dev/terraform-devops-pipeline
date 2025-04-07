@@ -29,3 +29,7 @@ variable "ssl_certificate" {
 variable "ecs_task_execution_role_arn" {
   type = string
 }
+
+variable iam_instance_profile {
+  type = string
+}

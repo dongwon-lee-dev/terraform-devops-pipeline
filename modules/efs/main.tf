@@ -21,15 +21,15 @@ resource "aws_efs_access_point" "jenkins_access_point" {
   file_system_id = aws_efs_file_system.app_efs_data.id
 
   posix_user {
-    uid = 1000
-    gid = 1000
+    uid = 0
+    gid = 0
   }
 
   root_directory {
     path = "/jenkins"
     creation_info {
-      owner_uid   = 1000
-      owner_gid   = 1000
+      owner_uid   = 0
+      owner_gid   = 0
       permissions = "0777"
     }
   }

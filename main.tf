@@ -2,6 +2,8 @@ module "ecs" {
   source = "./modules/ecs"
   aws_subnet_private1_id = module.vpc.aws_subnet_private1_id
   aws_subnet_private2_id = module.vpc.aws_subnet_private2_id
+  aws_subnet_public1_id = module.vpc.aws_subnet_public1_id
+  aws_subnet_public2_id = module.vpc.aws_subnet_public2_id
   aws_security_group_allow_all_traffic_id = module.vpc.aws_security_group_allow_all_traffic_id
 
   aws_efs_access_point_grafana_access_point = module.efs.aws_efs_access_point_grafana_access_point
@@ -26,6 +28,7 @@ module "ecs" {
   sonarqube_image = var.sonarqube_image
   nexus_image = var.nexus_image
   ecs_task_execution_role_arn = var.ecs_task_execution_role_arn
+  iam_instance_profile = var.iam_instance_profile
 }
 
 module "efs" {
