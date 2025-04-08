@@ -13,6 +13,7 @@
     - AmazonECSTaskExecutionRolePolicy
     - AmazonElasticFileSystemClientFullAccess
     - CloudWatchLogsFullAccess
+    - AmazonSSMManagedInstanceCore (For getting Nexus initial password)
 4. Prepare an IAM Role for EC2 IAM Instance Profile with the policies listed below.
     - AmazonEC2ContainerRegistryPowerUser
     - AmazonEC2ContainerServiceforEC2Role
@@ -73,4 +74,12 @@ Other services are Fargate (serverless) type ECS service.
 aws backup start-backup-job --backup-vault-name app-efs-backup --resource-arn arn:aws:elasticfilesystem:us-east-1:088351136602:file-system/fs-068366379ccec1f88 --iam-role-arn arn:aws:iam::088351136602:role/service-role/AWSBackupDefaultServiceRole
 
 aws backup describe-backup-job --backup-job-id [backup job id]  // Check backup status
+```
+
+### Getting Nexus initial password
+In AWS CLI, 
+```
+aws ecs execute-command --region us-east-1 --cluster app-cluster --task [Task ARN] --container nexus --command "/bin/sh" --interactive
+
+cat /nexus-data/admin.password
 ```
